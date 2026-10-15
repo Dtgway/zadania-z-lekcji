@@ -60,15 +60,15 @@ print(mniejszeod0)
 
 #zadanie 6
 
-mniejszerowne = 0
+wiekszerowne = 0
 from random import randint
 lista = [randint(-50,50) for el in range(100)]
 print(lista)
 for el in lista:
     if el > 0 or el == 0:
-        mniejszerowne += 1
+        wiekszerowne += 1
 print("=================================")
-print(mniejszerowne)
+print(wiekszerowne)
 
 
 

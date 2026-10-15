@@ -1,213 +1,184 @@
+# from random import randint
 
-from math import pi as PI
-import time
-import random
+#zadanie 1
 
-#wersja 1 zadanie 1
+x = []
+while len(x) != 10:
+    x.append(randint(1,101))
+print(x)
 
-print("Obliczanie pola kuli")
-r = float(input("r = "))
-print(f"Pole kuli dla r = {r} = {4*PI*r}")
 
-#wersja 1 zadanie 2
+#zadanie 2
 
-n = int(input("ile razy - "))
-while 0 < n:
-    print("kocham programowac")
-    n -= 1
+z = []
+while len(z) != 20:
+    k = randint(100,201)
+    if k % 2 == 0 and k % 5 != 0:
+        z.append(k)
+print(z)
 
-#wersja 1 zadanie 3
+
+#zadanie 3
+
+d = 0
+v = 0
+b = 0
+n = 0
+k = 0
+zdanie = input("napisz dowolne zdanie -----  ")
+licz = list(zdanie)
+for el in licz:
+    if el  == 'd':
+        d += 1
+    if el  == 'v':
+            v += 1
+    if el == 'b':
+            b += 1
+    if el == 'n':
+            n += 1
+    if el == 'k':
+            k += 1
+print(f"W twoim zdaniu jest {d} d, {v} v, {b} b, {n} n i {k} k")
+print(licz)
+
+
+
+
+#zadanie 5
+
+mniejszeod0 = 0
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+for el in lista:
+    if el < 0:
+        mniejszeod0 += 1
+print("===============================")
+print(mniejszeod0)
+
+
+
+#zadanie 6
+
+mniejszerowne = 0
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+for el in lista:
+    if el > 0 or el == 0:
+        mniejszerowne += 1
+print("=================================")
+print(mniejszerowne)
+
+
+
+
+#zadanie 7 
+
 
 suma = 0
-while True:
-    inp = input("Podaj liczbe ktora chcesz zsumowac lub stop jesli chcesz zakonczyc  ")
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+for el in lista:
+    if el % 2 == 0:
+        suma += el
+print("====================================")
+print(suma)
 
-    if inp == "stop":
-        break
 
-    liczba = float(inp)
-    suma += liczba
-print(f"suma tych liczb wynosi {suma}")
 
-#wersja 1 zadanie 4
+
+#zadanie 8
+
+
+
+suma = 0
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+for el in lista:
+    if el % 2 != 0:
+        suma += el
+print("====================================")
+print(suma)
+
+
+
+
+#zadanie 9
+
+
+suma = 0
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+for el in lista:
+    if el % 5 == 0 and el % 7 == 0:
+        suma += el
+print("====================================")
+print(suma)
+
+
+
+#zadanie 10
 
 
 ile = 0
-suma = 0
-while True:
-    inp = input("Podaj liczby ktorych srednia chesz sprawdzic  ")
-
-    if inp == "stop":
-        break
-    ile += 1
-    liczba = float(inp)
-    suma += liczba
-
-print(f"srednia tych liczb wynosi {suma/ile}")
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+liczba = int(input("Napisz jaka liczbe z listy chcesz policzyc (od -50 do 50) ----   "))
+for el in lista:
+    if el == liczba:
+        ile += 1
+print("=======================================")
+print(ile)
 
 
-#wersja 1 zadanie 5a
 
 
-suma = 0
-n = int(input("Ile poteg liczby 2 - "))
-i = 0
-while n > 0:
-    i += 1
-    n -= 1
-    suma += 2**i
-print(f"Suma pierwszych {i} poteg liczby 2 = {suma}")
+#zadanie 11
 
 
-#wersja 2 zadanie 1
 
 
-print("Obliczanie objetosci ostroslupa")
-pp = float(input("pp = "))
-h = float(input("h = "))
-print(f"objetosc ostroslupa dla pp = {pp} i h = {h} = {1/3*pp*h}")
+index = 0
+najw = 0
+najwindex = 0
+najm = 0
+najmindex = 0
+from random import randint
+lista = [randint(-50,50) for el in range(100)]
+print(lista)
+for el in lista:
+    if el > najw:        
+        najw = el        
+        najwindex = index
+    if el < najm:
+        najm = el
+        najmindex = index
+    index += 1
+print("=================================================")
+print(f"Najwieksza liczba to {najw} a jej index = {najwindex}, najmniejsza liczba to {najm} a jej index = {najmindex}")
 
 
-#wersja 2 zadanie 2
+
+#zadanie 12
 
 
-liczba = random.randint(1,100)
-proby = 3
-wygrana = False
-print("gra w zgadywanie liczby od 1 do 100")
-while proby > 0 and not wygrana:
-    traf = int(input(f"proba {4-proby}. Zgaduj!  "))
-    if traf == liczba:
-        wygrana = True
-        print("Masz farta, nastepnym razem ci sie nie uda")
-    else:
-        proby -= 1
-        if proby > 0:
-            print(f"Zostalo ci jeszcze {proby} prob ale i tak ci sie nie uda")
-    if not  wygrana and proby == 0:
-        print("I tak nigdy nie miales szans!")
+
+zasieg = int(input("od jakiej liczby chcesz zaczac liste (jaka tylko sobie wymarzysz liczba calkowita) -----   "))
+zasiegk = int(input("do jakiej liczby chcesz liste (jaka tylko sobie wymarzysz liczba calkowita) -----   "))
+if zasieg > zasiegk or zasieg == zasiegk:
+    print("Liczba od ktorej zaczynasz liste musi byc mniejsza od tej ktora konczysz")
+    zasieg = int(input("od jakiej liczby chcesz zaczac liste (jaka tylko sobie wymarzysz liczba calkowita) -----   "))
+wielkosc = int(input("ile liczb ma miec twoja lista --------    "))
 
 
-#wersja 2 zadanie 3
+from random import randint
+lista = [randint(zasieg,zasiegk) for el in range(wielkosc)]
+print(lista)
 
-najwieksza = None
-n = int(input("n = "))
-while n > 0:
-    z = input("Liczby - ")
+
     
-    
-    i = float(z)
-    if najwieksza == None or i > najwieksza:
-        najwieksza = i
-    n -= 1
-    print(i)
-i = 0
-while True:
-    chcesz = input("wyswietlic? - ")
-    if chcesz == "stop":
-        break
-print(najwieksza)
-
-
-#wersja 2 zadanie 4
-
-a = float(input("a = "))
-b = float(input("b = "))
-c = float(input("c = "))
-if a**2 + b**2 == c**2 or b**2 + c**2 == a**2 or c**2 + a**2 == b**2:
-    print("Mozna zbudowac trojkat prostokatny")
-else:
-    print("nie mozna zbudowac trojkata prostokatnego")
-
-
-#wersja 2 zadanie 5
-
-
-
-
-
-
-
-
-
-
-
-#wesja 3 zadanie 1
-
-
-
-print("obliczanie objetosci szescianu")
-a = float(input("a = "))
-print(f"objetosc szescianu dla a = {a} = {a*a*a}")
-
-
-
-
-#wersja 3 zadanie 2
-
-
-
-i = 10
-while i > 0:
-    x = random.randint(1,10000)
-    print(x)
-    i -= 1
-    time.sleep(0.1)
-
-
-#wersja 3 zadanie 3
-
-ile = 0
-suma = 0
-while True:
-    inp = input("Podaj liczbe ktora chcesz zsumowac lub stop jesli chcesz zakonczyc  ")
-
-    if inp == "stop":
-        break
-
-    liczba = float(inp)
-    suma += liczba
-    ile += 1
-print(f"suma tych liczb wynosi {suma}")
-print(f"srednia tych liczb wynosi {suma/ile}")
-
-
-
-#wersja 3 zadanie 4
-
-
-prostokatny = False
-a = float(input("a = "))
-b = float(input("b = "))
-c = float(input("c = "))
-if a**2 + b**2 == c**2 or b**2 + c**2 == a**2 or c**2 + a**2 == b**2:
-    prostokatny = True
-elif prostokatny == True and a == b or a == c or b == c:
-    print("prostokatny rownoramienny")
-elif prostokatny == False and a == b == c:
-    print("rownoboczny")
-
-else:
-    print("nie mozna zbudowac trojkata prostokatnego")
-
-
-
-#wersja 3 zadanie 5
-
-
-
-k = float(input("k = "))
-m = float(input("m = "))
-print(f"reszta z dzielenia {k} przez {m} = {k % m}")
-
-
-
-
-#wersja 3 zadanie 6
-
-
-
-k = float(input("k = "))
-m = float(input("m = "))
-
-print(f"Liczba k dzieli sie przez m {k/m} razy")

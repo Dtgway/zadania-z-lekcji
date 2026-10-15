@@ -39,7 +39,7 @@ for el in licz:
     if el == 'k':
             k += 1
 print(f"W twoim zdaniu jest {d} d, {v} v, {b} b, {n} n i {k} k")
-print(licz)
+
 
 
 
